@@ -14,6 +14,9 @@ on early-init
 
     export EXTERNAL_STORAGE /storage/sdcard0
 
+on emmc-fs
+    mkdir /devlog 0700 root root
+
     # load msm8660 firmware so things have time to initialize
     rm /vendor
     mkdir /vendor               0771 system system
@@ -21,9 +24,7 @@ on early-init
     mkdir /vendor/firmware/misc 0771 system system
     mkdir /vendor/firmware/adsp 0771 system system
 
-    wait /dev/block/mmcblk0p17
-    wait /dev/block/mmcblk0p19
-    mount vfat /dev/block/mmcblk0p17 /vendor/firmware/misc ro shortname=lower
+    mount_all fstab.doubleshot
 
     symlink /vendor/firmware/misc/q6.b07 /vendor/firmware/q6.b07
     symlink /vendor/firmware/misc/q6.b06 /vendor/firmware/q6.b06
@@ -53,10 +54,8 @@ on early-fs
     mkdir /system
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
-    mkdir /devlog 0700 root root
 
 on fs
-    mount_all /fstab.doubleshot
 
     setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000
 
@@ -103,6 +102,9 @@ on boot
 
     # for modem link
     chown system system /sys/module/serial/parameters/modem_enabled
+
+    # 4.3 requires this
+    chmod 0644 /proc/cmdline
 
     # wifi
     mkdir /data/misc 1771 system misc
@@ -263,6 +265,9 @@ service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -c /data/mis
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
+
+on property:ro.boot.emmc=true
+    start rmt_storage
 
 on property:init.svc.bootanim=stopped
     start qcom-post-boot
