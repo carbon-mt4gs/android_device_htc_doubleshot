@@ -50,6 +50,40 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := doubleshot
 # RIL
 BOARD_USE_NEW_LIBRIL_HTC := true
 
+BOARD_SEPOLICY_DIRS := \
+  device/htc/doubleshot/sepolicy
+
+BOARD_SEPOLICY_UNION := \
+  file_contexts \
+  property_contexts \
+  te_macros \
+  bluetooth_loader.te \
+  bridge.te \
+  camera.te \
+  conn_init.te \
+  device.te \
+  dhcp.te \
+  domain.te \
+  drmserver.te \
+  file.te \
+  kickstart.te \
+  init.te \
+  mediaserver.te \
+  mpdecision.te \
+  netmgrd.te \
+  property.te \
+  qmux.te \
+  restorecon.te \
+  rild.te \
+  rmt.te \
+  sensors.te \
+  surfaceflinger.te \
+  system.te \
+  tee.te \
+  thermald.te \
+  ueventd.te \
+  wpa_supplicant.te
+
 # Wifi
 -include device/htc/msm8660-common/bcmdhd.mk
 

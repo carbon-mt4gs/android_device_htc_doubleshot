@@ -42,12 +42,12 @@ PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
 
 # Boot ramdisk setup
-PRODUCT_COPY_FILES += \
-	device/htc/doubleshot/ramdisk/fstab.doubleshot:root/fstab.doubleshot \
-	device/htc/doubleshot/ramdisk/init.doubleshot.rc:root/init.doubleshot.rc \
-	device/htc/doubleshot/ramdisk/init.doubleshot.usb.rc:root/init.doubleshot.usb.rc \
-	device/htc/doubleshot/ramdisk/ueventd.doubleshot.rc:root/ueventd.doubleshot.rc \
-	device/htc/doubleshot/ramdisk/init.recovery.doubleshot.rc:root/init.recovery.doubleshot.rc
+PRODUCT_PACKAGES += \
+    fstab.doubleshot \
+    init.doubleshot.rc \
+    init.doubleshot.usb.rc \
+    remount.doubleshot \
+    ueventd.doubleshot
 
 ## recovery and custom charging
 PRODUCT_COPY_FILES += \
