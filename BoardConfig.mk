@@ -104,4 +104,4 @@ TARGET_RECOVERY_INITRC := device/htc/doubleshot/recovery/init.rc
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/htc/doubleshot/recovery/default_recovery_keys.c
 BOARD_CUSTOM_GRAPHICS := ../../../device/htc/doubleshot/recovery/graphics.c
 BOARD_USES_MMCUTILS := true
-TARGET_RECOVERY_FSTAB = device/htc/doubleshot/ramdisk/fstab.doubleshot
+TARGET_RECOVERY_FSTAB = device/htc/doubleshot/rootdir/etc/fstab.doubleshot
