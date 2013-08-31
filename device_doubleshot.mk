@@ -14,6 +14,10 @@
 # limitations under the License.
 #
 
+# Custom to DS
+PRODUCT_COPY_FILES += \
+    device/htc/doubleshot/configs/media_profiles.xml:system/etc/media_profiles.xml
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
