@@ -25,4 +25,7 @@
     <!-- The camera removes the focus modes by default when touch-to-focus
         exists. Use this option to change that behavior -->
     <bool name="wantsFocusModes">true</bool>
+
+    <!-- Disable touch snapshot in video recording (msm8660 camera can't do this natively) -->
+    <bool name="disableTouchSnapshot">true</bool>
 </resources>
