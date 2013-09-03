@@ -1,4 +1,3 @@
-# Copyright (C) 2009 The Android Open Source Project
 # Copyright (C) 2013 Emmanuel Utomi
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,45 +24,15 @@
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
 
-# Inherit from common msm8660
--include device/htc/msm8660-common/BoardConfigCommon.mk
-
-# Inherit Recovery flags
--include device/htc/doubleshot/recovery/BoardConfigRecovery.mk
-
-# Audio
-BOARD_HAVE_HTC_AUDIO := true
-
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := doubleshot
-
-# Kernel [Settings]
-BOARD_KERNEL_BASE := 0x48000000
-BOARD_KERNEL_PAGE_SIZE := 2048
-BOARD_KERNEL_CMDLINE := no_console_suspend=1
-
-# Kernel [Build]
-TARGET_KERNEL_CONFIG := doubleshot_defconfig
-TARGET_KERNEL_SOURCE := kernel/htc/doubleshot
-BUILD_KERNEL := true
-#TARGET_KERNEL_CUSTOM_TOOLCHAIN := codefirex-arm-eabi-4.7
-
-# GPS
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := doubleshot
-
-# RIL
-# BOARD_USE_NEW_LIBRIL_HTC := true
-BOARD_USES_LEGACY_RIL := true
-
-# Wifi
 -include device/htc/msm8660-common/bcmdhd.mk
 
 # Filesystem
-TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 838859776
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 1252770816
-BOARD_FLASH_BLOCK_SIZE := 262144
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16776192
+
+TARGET_PREBUILT_RECOVERY_KERNEL := device/htc/doubleshot/recovery/kernel
+
+# For S-ON
+# TW_INCLUDE_DUMLOCK := true
 
 #Recovery
 TARGET_PROVIDES_INIT := true

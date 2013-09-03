@@ -3,6 +3,7 @@ on early-init
 
 on init
     export PATH /sbin
+    export LD_LIBRARY_PATH .:/sbin
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /sdcard
@@ -12,6 +13,7 @@ on init
 
     chmod 0755 /sbin/busybox
 
+    mkdir /boot
     mkdir /sdcard
     mkdir /system
     mkdir /data
@@ -34,24 +36,24 @@ service ueventd /sbin/ueventd
     critical
 
 service choice_fn /sbin/choice_fn
-oneshot
+    oneshot
 
 service recovery /sbin/recovery
 
 service power_test /sbin/power_test
-disabled
-oneshot
+    disabled
+    oneshot
 
 service offmode_charging /sbin/offmode_charging
-disabled
-oneshot
+    disabled
+    oneshot
 
 service detect_key /sbin/detect_key
-disabled
-oneshot
+    disabled
+    oneshot
 
 service htcbatt /sbin/htcbatt
-oneshot
+    oneshot
 
 service adbd /sbin/adbd recovery
     disabled
