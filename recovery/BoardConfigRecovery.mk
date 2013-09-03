@@ -14,20 +14,16 @@
 
 #
 # This file sets variables that control the way modules are built
-# thorughout the system. It should not be used to conditionally
+# throughout the system. It should not be used to conditionally
 # disable makefiles (the proper mechanism to control what gets
 # included in a build is to use PRODUCT_PACKAGES in a product
 # definition file).
 #
 
-# WARNING: This line must come *before* including the proprietary
-# variant, so that it gets overwritten by the parent (which goes
-# against the traditional rules of inheritance).
-
--include device/htc/msm8660-common/bcmdhd.mk
-
 # Filesystem
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16776192
+
+DEVICE_RESOLUTION := 480x800
 
 TARGET_PREBUILT_RECOVERY_KERNEL := device/htc/doubleshot/recovery/kernel
 
