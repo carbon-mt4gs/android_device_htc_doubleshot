@@ -31,6 +31,8 @@
 # Inherit Recovery flags
 -include device/htc/doubleshot/recovery/BoardConfigRecovery.mk
 
+COMMON_GLOBAL_CPPFLAGS += -DCM_HARDWARE
+
 # Audio
 BOARD_HAVE_HTC_AUDIO := true
 
