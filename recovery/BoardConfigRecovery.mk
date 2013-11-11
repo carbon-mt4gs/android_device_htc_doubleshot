@@ -31,6 +31,7 @@ TARGET_PREBUILT_RECOVERY_KERNEL := device/htc/doubleshot/recovery/kernel
 # TW_INCLUDE_DUMLOCK := true
 
 #Recovery
+USE_SET_METADATA := false
 TARGET_PROVIDES_INIT := true
 TARGET_RECOVERY_FSTAB := device/htc/doubleshot/ramdisk/fstab.doubleshot
 RECOVERY_FSTAB_VERSION := 2

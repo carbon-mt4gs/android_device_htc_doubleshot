@@ -39,10 +39,13 @@ BOARD_HAVE_HTC_AUDIO := true
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := doubleshot
 
+# Graphics
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
+
 # Kernel [Settings]
 BOARD_KERNEL_BASE := 0x48000000
 BOARD_KERNEL_PAGE_SIZE := 2048
-BOARD_KERNEL_CMDLINE := no_console_suspend=1
+BOARD_KERNEL_CMDLINE := no_console_suspend=1 androidboot.selinux=permissive
 
 # Kernel [Build]
 TARGET_KERNEL_CONFIG := doubleshot_defconfig
