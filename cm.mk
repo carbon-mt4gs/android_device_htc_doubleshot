@@ -26,4 +26,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.developerid=xmcwildchild22 \
     ro.goo.board=doubleshot \
     ro.goo.version=$(shell date +%y%m%d) \
-    ro.goo.rom=JellyBeanDS-4.3
+    ro.goo.rom=KitKatDS-4.4
