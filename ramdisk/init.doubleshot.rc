@@ -4,34 +4,31 @@ on init
     # limit 2D GPU clock to work around random reboots and poweroffs
     write /sys/devices/platform/kgsl-2d0.0/kgsl/kgsl-2d0/max_gpuclk 160000000
 
-    mkdir /mnt/media_rw 0770 media_rw media_rw
+   mkdir /mnt/media_rw 0770 media_rw media_rw
     mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
-    mkdir /storage 0550 system sdcard_r
     mkdir /mnt/media_rw/usbdisk 0700 media_rw media_rw
 
     mkdir /storage/sdcard0 0700 root root
     mkdir /storage/usbdisk 0700 root root
 
-    export EXTERNAL_STORAGE /storage/sdcard0:/storage/usbdisk0
-
     # for backwards compatibility
     symlink /storage/sdcard0 /sdcard
     symlink /storage/sdcard0 /mnt/sdcard
+    export EXTERNAL_STORAGE /storage/sdcard0
+    symlink /storage/usbdisk /usbdisk
+    symlink /storage/usbdisk /mnt/usbdisk
 
-    symlink /storage/usbdisk /usbdisk0
-    symlink /storage/usbdisk /mnt/usbdisk0
-    
     # load msm8660 firmware so things have time to initialize
     rm /vendor
-    mkdir /vendor               0771 system system
-    mkdir /vendor/firmware      0771 system system
+    mkdir /vendor 0771 system system
+    mkdir /vendor/firmware 0771 system system
     mkdir /vendor/firmware/misc 0771 system system
     mkdir /vendor/firmware/adsp 0771 system system
 
     wait /dev/block/mmcblk0p17
     wait /dev/block/mmcblk0p19
     mount vfat /dev/block/mmcblk0p17 /vendor/firmware/misc ro shortname=lower
-    mount vfat /dev/block/mmcblk0p19 /vendor/firmware/adsp ro shortname=lower 
+    mount vfat /dev/block/mmcblk0p19 /vendor/firmware/adsp ro shortname=lower
 
     symlink /vendor/firmware/misc/q6.b07 /vendor/firmware/q6.b07
     symlink /vendor/firmware/misc/q6.b06 /vendor/firmware/q6.b06
