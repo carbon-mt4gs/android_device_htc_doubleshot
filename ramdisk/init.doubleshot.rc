@@ -4,6 +4,7 @@ on init
     # limit 2D GPU clock to work around random reboots and poweroffs
     write /sys/devices/platform/kgsl-2d0.0/kgsl/kgsl-2d0/max_gpuclk 160000000
 
+    mkdir /mnt/media_rw 0770 media_rw media_rw
     mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
     mkdir /storage 0550 system sdcard_r
     mkdir /storage/sdcard0 0700 system system
