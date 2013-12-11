@@ -12,6 +12,7 @@
 
 /dev/msm_rotator        0660    system      graphics
 /dev/pmem               0660    system      graphics
+/dev/ion                0664    system      graphics
 
 # camera
 /dev/gemini0            0660    system      camera
