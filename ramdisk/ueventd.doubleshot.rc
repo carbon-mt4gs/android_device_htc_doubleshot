@@ -6,12 +6,12 @@
 /dev/kgsl-2d0           0666    root        root
 /dev/kgsl-3d0           0666    root        root
 /dev/kgsl-2d1           0666    root        root
-/dev/genlock            0666    root        root
 
 /dev/ion                0664    system      system
 
 /dev/msm_rotator        0660    system      graphics
-/dev/pmem               0660    system      graphics
+/dev/pmem               0664    media       system
+/dev/genlock            0666    root        root
 /dev/ion                0664    system      graphics
 
 # camera
@@ -57,10 +57,12 @@
 /dev/msm_evrc_in        0660    system      audio
 /dev/msm_wma            0660    system      audio
 /dev/msm_wmapro         0660    system      audio
+/dev/msm_aac            0660    system      audio
 /dev/msm_aac_in         0660    system      audio
 /dev/msm_amrnb_in       0640    system      audio
 
 /dev/ttyHS0             0600    bluetooth   bluetooth
+/dev/hci_tty            0666    bluetooth   bluetooth
 /dev/ttyHSUSB0          0600    system      system
 /dev/ttySA0             0600    system      system
 /dev/smd0               0640    radio       radio
