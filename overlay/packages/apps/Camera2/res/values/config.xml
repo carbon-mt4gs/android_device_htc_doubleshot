@@ -28,4 +28,8 @@
 
     <!-- Disable touch snapshot in video recording (msm8660 camera can't do this natively) -->
     <bool name="disableTouchSnapshot">true</bool>
+
+    <bool name="disableTouchSnapshot">true</bool>
+    <bool name="cancelAutoFocusOnPreviewStopped">false</bool>
+    <bool name="enableZSL">true</bool>
 </resources>
