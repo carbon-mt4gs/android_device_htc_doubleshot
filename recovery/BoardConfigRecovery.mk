@@ -25,7 +25,7 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16776192
 
 DEVICE_RESOLUTION := 480x800
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-
+TW_NO_REBOOT_BOOTLOADER := false
 TARGET_PREBUILT_RECOVERY_KERNEL := device/htc/doubleshot/recovery/kernel
 
 # For S-ON
@@ -35,8 +35,8 @@ TARGET_PREBUILT_RECOVERY_KERNEL := device/htc/doubleshot/recovery/kernel
 USE_SET_METADATA := false
 BOARD_HAS_NO_SELECT_BUTTON := false
 TARGET_PROVIDES_INIT := true
+TARGET_RECOVERY_INITRC := device/htc/doubleshot/recovery/init.rc
 TARGET_RECOVERY_FSTAB := device/htc/doubleshot/ramdisk/fstab.doubleshot
 RECOVERY_FSTAB_VERSION := 2
-TARGET_RECOVERY_INITRC := device/htc/doubleshot/recovery/init.rc
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/htc/doubleshot/recovery/default_recovery_keys.c
 BOARD_USES_MMCUTILS := true
