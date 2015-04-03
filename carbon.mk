@@ -10,7 +10,7 @@ TARGET_BOOTANIMATION_NAME := 480
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 PRODUCT_COPY_FILES += \
-     vendor/slim/prebuilt/common/bootanimation/480.zip:system/media/bootanimation.zip
+     vendor/carbon/prebuilt/common/bootanimation/480.zip:system/media/bootanimation.zip
 
 # Inherit some common Carbon stuff.
 $(call inherit-product, vendor/carbon/config/common_phone.mk)
