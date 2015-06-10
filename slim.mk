@@ -13,7 +13,7 @@ PRODUCT_COPY_FILES += \
      vendor/slim/prebuilt/common/bootanimation/480.zip:system/media/bootanimation.zip
 
 # Inherit some common SlimROM stuff.
-$(call inherit-product, vendor/slim/config/common_phone.mk)
+$(call inherit-product, vendor/slim/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/htc/doubleshot/device_doubleshot.mk)
